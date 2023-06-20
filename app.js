@@ -62,3 +62,11 @@ const mathOperations = () => {
         result = parseFloat(result) / parseFloat(currentNumber)
     }
 }
+
+equalsBtn.addEventListener('click', () => {
+    if(!currentNumber || !previousNumber) return;
+    haveDot = false;
+    mathOperations();
+    clear()
+    currentNumberTextDiv.innerText = result;
+})
