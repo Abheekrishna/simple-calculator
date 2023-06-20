@@ -23,5 +23,42 @@ numberBtn.forEach(button => {
         }
         currentNumber += e.target.innerText;
         currentNumberTextDiv.innerText = currentNumber;
+        
     })
 })
+
+
+operationBtn.forEach(operation => {
+    operation.addEventListener('click', (e) => {
+        if(!currentNumber) return;
+        haveDot = false;
+        const operationName = e.target.innerText;
+
+        if(currentNumber && previousNumber && lastOperation) {
+            mathOperations();
+        } else {
+            result = parseFloat(currentNumber);
+        }
+        clear();
+        lastOperation = operationName;
+    })
+})
+
+const clear = (name = '') => {
+    previousNumber = `${currentNumber} ${name} `
+    previousNumberTextDiv.innerText = previousNumber;
+    currentNumberTextDiv.innerText = '';
+    currentNumber = '';
+}
+
+const mathOperations = () => {
+    if(lastOperation === '+') {
+        result = parseFloat(result) + parseFloat(currentNumber)
+    } else if (lastOperation === '-') {
+        result = parseFloat(result) - parseFloat(currentNumber)
+    } else if (lastOperation === '*') {
+        result = parseFloat(result) * parseFloat(currentNumber)
+    } else if (lastOperation === '/') {
+        result = parseFloat(result) / parseFloat(currentNumber)
+    }
+}
