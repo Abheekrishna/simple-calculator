@@ -16,10 +16,9 @@ let haveDot = false;
 
 numberBtn.forEach(button => {
     button.addEventListener('click', (e) => {
-        console.log(e.target.innerText)
         if(e.target.innerText === '.' && !haveDot) {
             haveDot = true;
-        } else if (e.innerText === '.' && haveDot) {
+        } else if(e.target.innerText === '.' && haveDot) {
             return;
         }
         currentNumber += e.target.innerText;
