@@ -39,7 +39,7 @@ operationBtn.forEach(operation => {
         } else {
             result = parseFloat(currentNumber);
         }
-        clear();
+        clear(operationName);
         lastOperation = operationName;
     })
 })
@@ -69,4 +69,18 @@ equalsBtn.addEventListener('click', () => {
     mathOperations();
     clear()
     currentNumberTextDiv.innerText = result;
+})
+
+
+allClearBtn.addEventListener('click', () => {
+    currentNumber = '';
+    previousNumber = '';
+    lastOperation = '';
+    currentNumberTextDiv.innerText = '';
+    previousNumberTextDiv.innerText = '';
+})
+
+deleteBtn.addEventListener('click', () => {
+    const stringNum = currentNumber.toString().slice(0, -1);
+    currentNumberTextDiv.innerText = stringNum;
 })
