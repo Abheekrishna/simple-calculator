@@ -83,8 +83,8 @@ allClearBtn.addEventListener('click', () => {
 })
 
 deleteBtn.addEventListener('click', () => {
-    const stringNum = currentNumber.toString().slice(0, -1);
-    currentNumberTextDiv.innerText = stringNum;
+    currentNumber = currentNumber.toString().slice(0, -1);
+    currentNumberTextDiv.innerText = currentNumber;
 })
 
 const newYear = (new Date()).getFullYear();
