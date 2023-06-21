@@ -18,6 +18,8 @@ body {
     align-items: center;
     justify-content: center;
     margin-top: 50px;
+    flex-direction: column;
+    gap: 100px;
 }
 .calculator {
     display: grid;
@@ -65,4 +67,12 @@ button:active {
 }
 .del {
     grid-column: 3 / 5;
+}
+
+footer {
+    color: rgb(33, 33, 33);
+    font-size: 1.2rem;
+}
+.profile {
+    color: rgb(33, 33, 33);
 }
